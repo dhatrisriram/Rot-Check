@@ -1,28 +1,100 @@
-# Rot Check
+# 🥕 Rot Check: AI-Driven Quality Assurance
 
-**Rot Check** is a machine learning-based web application that classifies images of carrots, determining whether they are suitable for packaging or not. This project uses a **Convolutional Neural Network (CNN)** model to process the images and make predictions. Users can upload carrot images via a simple web interface, and the application will return a classification based on the pre-trained model.
+**Rot Check** is an end-to-end computer vision pipeline designed to automate **carrot sorting for packaging**.  
+By combining a **Convolutional Neural Network (CNN)** with **traditional computer vision metrics**, the system delivers robust **Healthy vs. Spoiled** classification along with detailed **quality grading**.
 
-The goal of this project is to **automate the quality assurance process** for carrot packaging, reducing human error and improving efficiency. Additionally, the application learns from user feedback to improve its predictions over time.
+---
 
-## Features
+## 📊 Performance & Data Strategy
 
-- **Image Upload**: Users can upload images of carrots.
-- **Real-time Classification**: The machine learning model processes the image and returns a classification.
-- **Web Interface**: Built using **Flask**, providing an easy-to-use interface.
-- **Model Accuracy**: Trained on a dataset of carrot images to ensure accuracy in predictions.
-- **User Feedback**: Users can provide feedback by selecting whether the classification result was correct or not. This feedback helps improve future iterations of the model by allowing it to learn from the input.
-  
-## Technologies Used
+To ensure **production-level reliability**, the model was trained on the **Food Freshness Dataset (~12,000 images)** with the following optimizations:
 
-- **Frontend**: HTML, CSS, JavaScript
-- **Backend**: Flask
-- **Machine Learning**: Python, TensorFlow (CNN Model)
+- **Training Accuracy**: 85.2%  
+- **Validation Accuracy (Peak)**: 87.2%  
+- **Class Imbalance Handling**: Applied a **1:4 class weight** to prioritize detection of spoiled carrots  
+- **Data Augmentation**: Rotation, zoom, and flips to improve generalization  
+- **Validation Strategy**: 20% validation split to test performance on unseen data  
 
-## How to Use
+---
 
-1. Open the application in your browser (`http://localhost:5000`).
+## 🛠️ Key Features
+
+### 🤖 Deep Learning Classifier
+- Binary CNN model built using **TensorFlow / Keras**
+- Classifies carrots as **Healthy** or **Spoiled**
+
+### 🧪 Hybrid Quality Scoring
+In addition to CNN predictions, the system computes:
+- **Color Score** – Euclidean distance-based color deviation  
+- **Shape Score** – Aspect ratio analysis  
+- **Size Score** – Relative size estimation  
+
+### 🔁 Active Learning Loop
+- Real-time **user feedback** after prediction  
+- Misclassified images are **stored for future retraining**
+- Improves model performance over time
+
+### 🌐 Web Dashboard
+- Intuitive **Flask-based interface**
+- Instant classification and quality grading results
+
+---
+
+## 📸 Demo
+
+**Classification Result**  
+**Quality Metrics & Feedback**  
+- Displays color, shape, and size analysis  
+- Allows users to confirm or reject predictions  
+
+---
+
+## 🧪 Technologies Used
+
+- **Frontend**: HTML, CSS, JavaScript  
+- **Backend**: Flask  
+- **Machine Learning**: Python, TensorFlow (CNN Model)  
+
+---
+
+## 🚀 Quick Start
+
+### 🔧 Installation
+```bash
+pip install -r requirements.txt
+```
+
+### 🧠 Train the Model
+```bash
+python train_model.py
+```
+
+Trained model is saved as: carrot_classifier_model.h5
+
+### ▶️ Run the Application
+```bash
+python app.py
+```
+
+## 📖 How to Use
+
+1. Open your browser and navigate to: http://127.0.0.1:5000
 2. Upload an image of a carrot.
-3. The model will classify whether the carrot is suitable for packaging or not.
-4. After the classification, you will be asked to confirm if the result was correct. You can select whether the classification was correct or not.
-5. The application will learn from your feedback, and over time, its predictions will improve.
+3. The model classifies whether the carrot is suitable for packaging.
+4. Confirm whether the prediction was **correct** or **incorrect**.
+5. The system learns from your feedback and improves over time.
 
+---
+
+## 🌱 Future Enhancements
+
+- Multi-class grading (A / B / C quality)
+- Batch image processing
+- Edge deployment for real-time factory usage
+- Automated retraining pipelines
+
+---
+
+## 📌 Project Goal
+
+To reduce manual inspection errors, increase sorting efficiency, and enable AI-driven quality assurance in agricultural packaging workflows.
