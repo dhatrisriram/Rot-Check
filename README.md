@@ -42,10 +42,9 @@ In addition to CNN predictions, the system computes:
 
 ## 📸 Demo
 
-**Classification Result**  
-**Quality Metrics & Feedback**  
-- Displays color, shape, and size analysis  
-- Allows users to confirm or reject predictions  
+![Landing page](assets/Landing page.png) 
+![Healthy classification](assets/Healthy classification.png)
+![Rotten classification](assets/Rotten classification.png)
 
 ---
 
