@@ -7,7 +7,7 @@ By combining a **Convolutional Neural Network (CNN)** with **traditional compute
 
 ## 📊 Performance & Data Strategy
 
-To ensure **production-level reliability**, the model was trained on the **Food Freshness Dataset (~12,000 images)** with the following optimizations:
+To ensure **production-level reliability**, the model was trained on the **Food Freshness Dataset** -  https://www.kaggle.com/datasets/ulnnproject/food-freshness-dataset with the following optimizations:
 
 - **Training Accuracy**: 85.2%  
 - **Validation Accuracy (Peak)**: 87.2%  
@@ -42,9 +42,14 @@ In addition to CNN predictions, the system computes:
 
 ## 📸 Demo
 
-![Landing page](assets/Landing page.png) 
-![Healthy classification](assets/Healthy classification.png)
-![Rotten classification](assets/Rotten classification.png)
+### Landing Page
+![Landing Page](assets/Landing%20page.png)
+
+### Healthy Classification
+![Healthy Classification](assets/Healthy%20classification.png)
+
+### Rotten Classification
+![Rotten Classification](assets/Rotten%20classification.png)
 
 ---
 
@@ -97,3 +102,4 @@ python app.py
 ## 📌 Project Goal
 
 To reduce manual inspection errors, increase sorting efficiency, and enable AI-driven quality assurance in agricultural packaging workflows.
+
